@@ -1,5 +1,3 @@
 """
-PatchProof: Software-Repair Evaluation Toolkit & Benchmark Harness
+PatchProof Unit Tests Package
 """
-
-__version__ = "0.1.0"
