@@ -1,3 +1,0 @@
-"""
-PatchProof Unit Tests Package
-"""
