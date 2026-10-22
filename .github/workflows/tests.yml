@@ -1,0 +1,36 @@
+name: PatchProof CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package and development dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip check
+      - name: Build package
+        run: python -m build
+      - name: Run engine and benchmark tests
+        run: python -m pytest -v
+      - name: Validate restored tasks
+        run: |
+          patchproof validate-task tasks/public/task_001_string_reverser
+          patchproof validate-task tasks/public/task_002_list_deduplicator

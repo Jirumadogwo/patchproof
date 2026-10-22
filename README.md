@@ -15,7 +15,9 @@ PatchProof is a modular Python-based evaluation toolkit designed to test whether
 Clone the repository and install it in editable mode with development dependencies:
 
 ```bash
-git clone [https://github.com/jirumadogwo/patchproof.git](https://github.com/jirumadogwo/patchproof.git)
+git clone https://github.com/jirumadogwo/patchproof.git
 cd patchproof
 pip install -e .[dev]
 
+
+```

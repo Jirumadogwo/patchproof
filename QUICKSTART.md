@@ -6,6 +6,8 @@ Get up and running with PatchProof in minutes.
 Clone your repository and install the package with development dependencies:
 
 ```bash
-git clone [https://github.com/jirumadogwo/patchproof.git](https://github.com/jirumadogwo/patchproof.git)
+git clone https://github.com/jirumadogwo/patchproof.git
 cd patchproof
 pip install -e .[dev]
+
+```
